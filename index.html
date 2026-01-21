@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Calculator</title>
+
+<!-- กล่องใหญ่ของเครื่องคิดเลข -->
+<div class="calculator">
+
+    <!-- หน้าจอแสดงตัวเลข -->
+    <!-- ตรงนี้คือ "จอ" ของเครื่องคิดเลข -->
+    <div id="display">0</div>
+
+    <!-- ปุ่มทั้งหมด -->
+    <div class="buttons">
+
+        <!-- ปุ่มตัวเลข -->
+        <!-- ถ้าอยากเพิ่มเลขใหม่ ให้เพิ่มปุ่มตรงนี้ -->
+        <button id="btn-7">7</button>
+        <button id="btn-8">8</button>
+        <button id="btn-9">9</button>
+
+        <button id="btn-4">4</button>
+        <button id="btn-5">5</button>
+        <button id="btn-6">6</button>
+
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+
+        <button id="btn-0">0</button>
+        <button id="btn-decimal">.</button>
+        <button id="btn-equals" class="equals">=</button>
+
+        <!-- ปุ่มเครื่องหมาย -->
+        <button id="btn-add" class="operator">+</button>
+        <button id="btn-subtract" class="operator">-</button>
+        <button id="btn-multiply" class="operator">×</button>
+        <button id="btn-divide" class="operator">÷</button>
+
+        <!-- ปุ่มล้างค่า -->
+        <button id="btn-clear" class="clear">AC</button>
+    </div>
+
+    <!-- ประวัติการคำนวณ -->
+    <!-- เด็ก ป.3: ตรงนี้คือ "สมุดจด" ว่าเรากดอะไรไปบ้าง -->
+    <div class="history">
+        <h3>History</h3>
+        <div id="history-list"></div>
+    </div>
+
+</div>
+
+<!-- ต่อไฟล์ JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
+
+    <!-- ต่อไฟล์ CSS -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>

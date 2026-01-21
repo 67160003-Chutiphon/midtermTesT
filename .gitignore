@@ -1,0 +1,13 @@
+# ===== OS / System =====
+.DS_Store
+Thumbs.db
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+
+# ===== Logs =====
+*.log
+
+# ===== Environment =====
+.env
