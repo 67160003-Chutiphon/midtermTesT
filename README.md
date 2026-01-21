@@ -1,8 +1,157 @@
-แอปนี้เป็นแอปสำหรับการคำนวญเลบโดยมี structure ดังนี้
+# 🧮 Simple Calculator with History
+
+โปรเจกต์นี้เป็นส่วนหนึ่งของ **Practice Exam – Front-End Web Development**  
+รายวิชา **88726065 การพัฒนาเว็บส่วนติดต่อผู้ใช้**
+
+วัตถุประสงค์ของงานนี้คือ  
+ฝึกการสร้างเว็บด้วย **HTML, CSS และ JavaScript (Vanilla)**  
+โดยไม่ใช้ Framework และเข้าใจการทำงานจริงของโค้ด
+
+---
+
+## 📁 โครงสร้างโปรเจกต์
 
 midterm-practice/
-├── index.html
-├── styles.css
-├── script.js
-├── README.md (optional)
-└── .gitignore
+├── index.html # โครงสร้างหน้าเว็บ (ปุ่ม + จอ)
+├── styles.css # ตกแต่งหน้าตา (Grid / Flexbox / สี)
+├── script.js # Logic การคำนวณทั้งหมด
+├── .gitignore # ไฟล์ที่ไม่ต้องส่งขึ้น Git
+└── README.md # ไฟล์อธิบายโปรเจกต์นี้
+
+yaml
+Copy code
+
+---
+
+## 🎯 Features (ความสามารถของโปรแกรม)
+
+- ➕ บวก (Addition)
+- ➖ ลบ (Subtraction)
+- ✖️ คูณ (Multiplication)
+- ➗ หาร (Division)
+- 🧹 ปุ่ม **AC** ล้างค่าทั้งหมด
+- 📜 แสดง **History** การคำนวณ (ล่าสุดอยู่บนสุด)
+- 🚫 ป้องกันการ **หารด้วย 0**
+- ⌨️ รองรับ **Keyboard Support** (Bonus)
+
+---
+
+## 🖥️ UI Design
+
+- ใช้ **CSS Grid** สำหรับปุ่มตัวเลข (3 columns)
+- ใช้ **Flexbox** สำหรับการจัด layout
+- Display มี
+  - border
+  - padding
+  - text-align: right
+- History
+  - มี scroll
+  - จำกัดพื้นที่ด้วย `max-height`
+- สีตามโจทย์:
+  - ปุ่มตัวเลข: เทา
+  - Operator: น้ำเงิน
+  - Equals (=): เขียว
+  - Clear (AC): แดง
+
+---
+
+## 🧠 JavaScript Logic (อธิบายแบบเข้าใจง่าย)
+
+### ตัวแปรหลัก
+- `display` → ตัวเลขที่แสดงบนหน้าจอ
+- `operand1` → เลขตัวแรก
+- `operand2` → เลขตัวที่สอง
+- `operator` → เครื่องหมาย (+ - × ÷)
+- `history` → เก็บประวัติการคำนวณ
+
+---
+
+### ฟังก์ชันสำคัญ
+
+#### `appendDigit(digit)`
+- เพิ่มตัวเลขลงใน display
+- ไม่ให้มีเลข 0 ซ้ำด้านหน้า (00, 000)
+
+#### `appendDecimal()`
+- เพิ่มจุดทศนิยม
+- ไม่ให้ใส่ `.` ซ้ำ
+
+#### `selectOperator(op)`
+- เก็บเลขตัวแรก
+- เลือกเครื่องหมาย
+- เตรียมรับเลขถัดไป
+
+#### `calculate()`
+- คำนวณผลลัพธ์
+- เช็คการหารด้วย 0
+- บันทึก history
+- แสดงผลลัพธ์บน display
+
+#### `clearAll()`
+- รีเซ็ตค่าทั้งหมด
+- ไม่ลบ history
+
+#### `updateHistoryDisplay()`
+- แสดงประวัติการคำนวณ
+- แสดงรายการล่าสุดก่อน
+
+---
+
+## ⌨️ Keyboard Support
+
+สามารถใช้คีย์บอร์ดแทนการกดปุ่มได้
+
+| Key | Action |
+|----|-------|
+| 0–9 | ใส่ตัวเลข |
+| + | บวก |
+| - | ลบ |
+| * | คูณ |
+| / | หาร |
+| . | ทศนิยม |
+| Enter | เท่ากับ |
+| Backspace | ล้างค่า (AC) |
+
+---
+
+## 🐛 Bug Prevention
+
+- ✅ ป้องกัน leading zero (เช่น 05, 000)
+- ✅ ป้องกัน decimal ซ้ำ (3.4.5)
+- ✅ ป้องกัน division by zero
+
+---
+
+## 🚀 วิธีรันโปรเจกต์
+
+1. เปิดโฟลเดอร์โปรเจกต์ใน VS Code
+2. คลิกขวาที่ `index.html`
+3. เลือก **Open with Live Server**
+4. หรือเปิดไฟล์ `index.html` ด้วย browser ได้ทันที
+
+---
+
+## 📝 หมายเหตุ
+
+- ใช้ **Vanilla HTML / CSS / JavaScript เท่านั้น**
+- ไม่ใช้ Framework หรือ Library ภายนอก
+- โค้ดเขียนพร้อม comment เพื่อให้อ่านและพัฒนาต่อได้ง่าย
+
+---
+
+## 👨‍🎓 Author
+
+นักศึกษา: ชุติพนธ์ จิตต์รุ่งเรืองสุข 
+รหัสนิสิต: 67160003
+รายวิชา: 88726065 Front-End Web Development
+
+---
+
+## ✅ Checklist ก่อนส่ง
+
+- [x] HTML มี display, buttons, history
+- [x] CSS ใช้ Grid + Flexbox
+- [x] JavaScript ครบทุกฟังก์ชัน
+- [x] ป้องกัน division by zero
+- [x] Keyboard support ทำงาน
+- [x] ไม่มี error ใน Console
